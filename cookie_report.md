@@ -21,13 +21,13 @@ graph TD
     B --> C[쿠키 동의 배너 노출]
 
     %% 동의 거부 시
-    C -->|동의 거부 / 무시| D[Consent Update: Denied 유지]
+    C -->|동의 거부 / 무시| D[Consent Update: Denied유지]
     D --> F{매체 태그 작동 확인}
     F -->|Meta / Kakao 등| G[<b>수집 완전 차단</b><br/>데이터 전송 0%]
     F -->|Google 태그| H[<b>익명 핑 전송</b><br/>쿠키 미사용/식별불가]
 
     %% 동의 허용 시
-    C -->|동의 클릭| E[Consent Update: Granted 변경]
+    C -->|동의 클릭| E[Consent Update: Granted변경]
     E --> I[dataLayer.push<br/>'consent_confirmed' 발생]
     I --> J[GTM 트리거 작동]
     J --> K[매체 태그 정식 실행]
